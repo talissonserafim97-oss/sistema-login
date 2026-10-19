@@ -121,20 +121,18 @@
     </div>
 
     <script>
-        // Credenciais locais válidas (para fins de teste/validação simples da atividade)
         const CREDENCIAIS_VALIDAS = {
             usuario: "admin",
             senha: "123"
         };
 
         document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede a página de recarregar
+            event.preventDefault();
 
             const usuarioInserido = document.getElementById('username').value.trim();
             const senhaInserida = document.getElementById('password').value;
             const elementoMensagem = document.getElementById('message');
 
-            // Validação local simples
             if (usuarioInserido === CREDENCIAIS_VALIDAS.usuario && senhaInserida === CREDENCIAIS_VALIDAS.senha) {
                 elementoMensagem.textContent = "🚀 Login realizado com sucesso! Acesso concedido.";
                 elementoMensagem.className = "success";
@@ -142,6 +140,7 @@
                 elementoMensagem.textContent = "❌ Usuário ou senha incorretos. Tente novamente.";
                 elementoMensagem.className = "error";
             }
-        </script>
+        });
+    </script>
 </body>
 </html>
